@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "Project_one",
+    "slug": "Project_one",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logo_shopdunkN.jpg",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splashh.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*",
+      "assets/images/imgAuth/login.svg"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logoremobeBG.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

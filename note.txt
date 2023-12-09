@@ -1,0 +1,42 @@
+1. sản phẩm nằm trong file data tên là dataProduct
+2. sản phẩm yêu thích nằm trong file context.js trong thư mục context
+
+const FavoriteProductsContext = createContext();
+
+export const useFavoriteProducts = () => {
+  return useContext(FavoriteProductsContext);
+};
+const [favoriteProducts, setFavoriteProducts] = useState([]);
+
+
+3. giỏ hàng nằm trong file context.js trong thư mục context
+  const [cart, setCart] = useState([]);
+
+  const [orderList, setOrderList] = useState([])
+
+  const CartContext = createContext();
+
+export const CartProduct = () => {
+  return useContext(CartContext)
+}
+
+4. đơn hàng nằm trong file context.js trong thư mục context
+
+const OrderContext = createContext();
+
+export const Orders = () => {
+  return useContext(OrderContext)
+}
+
+-- chi tiết 1 đơn hàng --
+const c = {
+      orderName: orderName,
+      address: address,
+      yName: yName,
+      email: email,
+      phone: phone,
+      time: new Date(),
+      CartItem: CartItem,
+      status: "chờ duyệt",
+      id: (orderList.length == 0 ? 0 : orderList[orderList.length - 1].id + 1)
+    }
