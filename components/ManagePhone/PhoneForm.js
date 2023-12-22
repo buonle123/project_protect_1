@@ -55,7 +55,6 @@ const PhoneForm = ({ onCancel, onSubmit, buttonLabel, defaultValues }) => {
       imgUri: imgUrl,
       typeProduct: valueType,
       productInfo: inputs.productInfo.value,
-      
     };
     const isValiName = phonesData.name.length > 0;
     const isValiPriceNew =
@@ -116,6 +115,8 @@ const PhoneForm = ({ onCancel, onSubmit, buttonLabel, defaultValues }) => {
       const result = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.Images,
         allowsMultipleSelection: true,
+        aspect: [4, 3],
+        quality: 1,
       });
       if (!result.canceled) {
         // Use the first asset's URI

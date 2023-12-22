@@ -22,7 +22,7 @@ const PhoneItem = ({ item }) => {
             style={styles.img}
             source={
               typeof item.imgUri[0] === "number"
-                ? item.imgUri
+                ? item.imgUri[0]
                 : { uri: item.imgUri[0] }
             }
           />

@@ -19,6 +19,7 @@ const ManagePhoneScreen = () => {
       phonesContext.setPhones(phones);
     }
     getPhones();
+    console.log(phonesContext.phones);
   }, []);
   function editHanlder() {
     navigation.navigate("PhoneEditScreen");

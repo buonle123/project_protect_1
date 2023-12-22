@@ -28,8 +28,8 @@ function AuthStack() {
       {!skipped && (
         <Stack.Screen name="OnBoardingScreen" component={OnBoardingScreen} />
       )}
-      <Stack.Screen name="Admin" component={AdminDrawer} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen name="Admin" component={AdminDrawer} />
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
       <Stack.Screen name="ForgetScreen" component={ForgetScreen} />
       <Stack.Screen name="ChangePassScreen" component={ChangePassScreen} />

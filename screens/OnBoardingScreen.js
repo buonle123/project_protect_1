@@ -15,6 +15,7 @@ import AntDesignIcons from "react-native-vector-icons/AntDesign";
 import { useNavigation } from "@react-navigation/native";
 import data from "../data/onboarding";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import Popup from "../components/Popup";
 
 function OnBoardingScreen() {
   const navigation = useNavigation();
@@ -55,6 +56,7 @@ function OnBoardingScreen() {
   function renderTopSection() {
     return (
       <SafeAreaView>
+      
         <View style={styles.topSection}>
           {/* Back button */}
           <TouchableOpacity

@@ -40,7 +40,7 @@ const ChangePassScreen = ({ navigation }) => {
               marginLeft: 25,
               marginBottom: 25,
             }}
-            source={require("../assets/images/imgAuth/tichxanhh.png")}
+            source={require("../assets/images/imgAuth/tick.png")}
           />
           <Text>Please check your mail to change pass </Text>
           <ButtonCustom

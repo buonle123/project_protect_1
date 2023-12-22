@@ -21,6 +21,7 @@ import { login } from "../util/http";
 import OverLayLoading from "../components/UI/OverLayLoading";
 import { AuthContext } from "../store/auth-context";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import Popup from "../components/Popup";
 const LoginScreen = ({ navigation }) => {
   const [inputs, setInputs] = useState({
     email: { value: "", isValid: true },
@@ -127,6 +128,7 @@ const LoginScreen = ({ navigation }) => {
       }
     }
   }
+
   if (isAuthenticating) {
     return <OverLayLoading />;
   }
@@ -196,13 +198,13 @@ const LoginScreen = ({ navigation }) => {
         <CustomButtonAuth label={"Login"} onPress={SubmitLoginHandler} />
         <Text style={styles.textLoginWith}>Or, login with...</Text>
         <View style={styles.containerLoginMedia}>
-          <TouchableOpacity onPress={() => { }} style={styles.loginMedia}>
+          <TouchableOpacity onPress={() => {}} style={styles.loginMedia}>
             <GoogleSvg width={24} height={24} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => { }} style={styles.loginMedia}>
+          <TouchableOpacity onPress={() => {}} style={styles.loginMedia}>
             <FacebookSvg width={24} height={24} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => { }} style={styles.loginMedia}>
+          <TouchableOpacity onPress={() => {}} style={styles.loginMedia}>
             <TwitterSvg width={24} height={24} />
           </TouchableOpacity>
         </View>

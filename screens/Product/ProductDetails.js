@@ -15,10 +15,7 @@ import { CartProduct, useFavoriteProducts } from "../../context/context";
 const { width, height } = Dimensions.get("window");
 
 export default function ProductDetails({ route, navigation }) {
-
   const { cart, setCart } = CartProduct();
-
-
 
   const { productItem } = route.params;
   let priceNew = productItem.priceNew.toLocaleString("en-US");
@@ -102,47 +99,45 @@ export default function ProductDetails({ route, navigation }) {
     let c = -1;
     if (cart.length == 0) return -1;
     else {
-      c = cart.findIndex(item => {
+      c = cart.findIndex((item) => {
         return item.product.title == productItem.title;
-      })
+      });
     }
     return c;
-  }
+  };
   const idCheckCart = checkCart();
 
-
   const [buttonText, setButtonText] = useState(idCheckCart != -1);
-
 
   const addCart = () => {
     let c = checkCart();
     let idIT = 0;
-    
-    if(cart.length > 0){
-      idIT = (cart[cart.length-1].id+1)
+
+    if (cart.length > 0) {
+      idIT = cart[cart.length - 1].id + 1;
     }
     const itemCart = {
       product: productItem,
       quantity: 1,
-      id: idIT
-    }
+      id: idIT,
+    };
 
-    setCart((l)=>{
-      if(cart.length == 0){
-        return [itemCart]
-      } else{
-        if(!buttonText){
-          return [...l, itemCart]
-        } else{
-          const updateCart = cart.filter(item=>{
+    setCart((l) => {
+      if (cart.length == 0) {
+        return [itemCart];
+      } else {
+        if (!buttonText) {
+          return [...l, itemCart];
+        } else {
+          const updateCart = cart.filter((item) => {
             return item.product.title != productItem.title;
-          })
+          });
           return updateCart;
         }
       }
-    })
+    });
     setButtonText(!buttonText);
-  }
+  };
 
   return (
     <View className="items-center flex-1 pt-5 bg-neutral-100">
@@ -303,10 +298,10 @@ export default function ProductDetails({ route, navigation }) {
         className="items-center "
       >
         <TouchableOpacity
-          className="bg-orange-400  rounded-xl mt-4"
-          style={{ width: width * 0.98 , height:"80%"}}
+          className="mt-4 bg-orange-400 rounded-xl"
+          style={{ width: width * 0.98, height: "80%" }}
           onPress={() => {
-            addCart()
+            addCart();
             // navigation.navigate("OrderScreen", { productItem: productItem });
           }}
         >
